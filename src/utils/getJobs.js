@@ -5,6 +5,7 @@ export const getAllJobs = async () => {
   const designJobs = await getJobs('design-ux')
 
   const allJobs = [...programmingJobs, ...designJobs]
+  
 
   return allJobs.map((job, index) => ({ ...job, id: index }))
 }
@@ -29,7 +30,6 @@ export const getJobs = async (categorie, amount = 12, page = 1) => {
     category: { name: categorie, title: job.attributes.category_name },
     company: { name: job.attributes.company.data.attributes.name },
   }))
-  console.log('Console log : getJobs -> jobsFormatted', jobsFormatted)
 
   return jobsFormatted
 }
