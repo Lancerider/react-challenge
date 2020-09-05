@@ -8,6 +8,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #F2F6F7;
   padding-top: 60px;
+  background-image: url("./assets/images/texture-transparent-gray.svg");
+  height: 100vh;
 }
 
 code {
@@ -34,6 +36,7 @@ code {
 .App {
   display: flex;
   justify-content: center;
+  padding-top: 20px;
 }
 .jobs-list {
   max-width: 960px;
@@ -44,23 +47,26 @@ code {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  padding: 0 15px;
 }
 .jobs-list__title {
   font-size: 25px;
   font-weight: 900;
 }
 .jobs-list__results {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   padding: 0;
-  flex-wrap: wrap;
 }
 .jobs-list__item {
+  justify-self: center;
   list-style-type: none;
-  padding: 22px;
+  padding: 18px;
   width: 20%;
   background-color: white;
   border-radius: 6px;
-  margin: 0 0.2% 20px;
+  margin: 0 5px 20px;
+  min-width: 180px;
 }
 .jobs-list__icon {
   width: 36px;
@@ -96,4 +102,10 @@ code {
   border-radius: 6px;
   background: transparent;
   cursor: pointer;
+  font-size: 0.75rem;
+}
+.job-list__actions button img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
 }
