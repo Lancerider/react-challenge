@@ -1,9 +1,8 @@
 const GETONBOARD_BASE_URL = 'https://www.getonbrd.com/api/v0/categories/'
 
 export const getAllJobs = async () => {
-  console.log('getAllJobs')
   const programmingJobs = await getJobs('programming')
-  const designJobs = await getJobs('design')
+  const designJobs = await getJobs('design-ux')
 
   const allJobs = [...programmingJobs, ...designJobs]
 
@@ -12,10 +11,9 @@ export const getAllJobs = async () => {
 
 // TODO: Should accept an categories array
 export const getJobs = async (categorie, amount = 12, page = 1) => {
-  console.log('getJobs')
   const responseJobs = await fetch(
     GETONBOARD_BASE_URL +
-      `${categorie}/jobs?per_page=${amount}&page=${page}&expand=[\"company\"]`,
+      `${categorie}/jobs?per_page=${amount}&page=${page}&expand=["company"]`,
     {
       method: 'GET',
       headers: { 'Content-Type': 'text/plain' },
@@ -28,8 +26,8 @@ export const getJobs = async (categorie, amount = 12, page = 1) => {
     title: job.attributes.title,
     min_salary: job.attributes.min_salary,
     max_salary: job.attributes.max_salary,
-    category: { name: job.attributes.company.attributes.category_name },
-    company: { name: job.attributes.company.attributes.name },
+    category: { name: categorie, title: job.attributes.category_name },
+    company: { name: job.attributes.company.data.attributes.name },
   }))
   console.log('Console log : getJobs -> jobsFormatted', jobsFormatted)
 
