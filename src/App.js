@@ -17,8 +17,15 @@ export default function App() {
         type: 'SET_JOBS',
         jobs: jobsResponse.data,
       })
+      localStorage.setItem('jobs', jobsResponse)
     } catch (error) {
-      jobDispatchers({})
+      console.log("Console log : getJobs -> error", error)
+      const jobsInLocalStorage = localStorage['jobs']
+
+      jobDispatchers({
+        type: 'SET_JOBS',
+        jobs: jobsInLocalStorage || [],
+      })
     }
   }
 
