@@ -18,15 +18,20 @@ const JobsContainer = () => {
     setCategory('all')
   }
 
+  const removeJob = (id) => {
+    const remainingJobs = selectedJobs.filter(job => job.id !== id)
+    setSelectedJobs (remainingJobs)
+    setSelectedJobsTotal(selectedJobsTotal - 1)
+  }
+
   useEffect(() => {
     getJobs()
   }, [])
 
-  const jobsTotal = 4
   return (
     <div className="jobs-list">
       <div className="jobs-list__header">
-        <div className="jobs-list__title">{`Jobs list (${jobsTotal})`}</div>
+        <div className="jobs-list__title">{`Jobs list (${selectedJobsTotal})`}</div>
         <select className="">
           <option value="all">All jobs</option>
           <option value="programming">Programming</option>
@@ -34,8 +39,8 @@ const JobsContainer = () => {
         </select>
       </div>
       <div className="jobs-list__results">
-        {jobs.length > 0 ? jobs.map((job) => (
-          <JobItem key={job.id} jobData={job} />
+        {jobs.length > 0 ? selectedJobs.map((job) => (
+          <JobItem key={job.id} jobData={job} removeJob={removeJob}/>
         ))
           : <div>No items</div>}
       </div>

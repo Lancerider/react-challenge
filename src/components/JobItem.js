@@ -4,8 +4,8 @@ import programmingJobIcon from '../assets/images/programming.svg'
 import desingJobIcon from '../assets/images/design.svg'
 import deleteJobIcon from '../assets/images/trash-icon.svg'
 
-function JobItem(props) {
-  const { title, category, company, max_salary, min_salary } = props.jobData
+function JobItem({jobData, removeJob}) {
+  const { id, title, category, company, max_salary, min_salary } = jobData
 
   const getLogo = (category) => category === 'programming'
     ? programmingJobIcon
@@ -27,7 +27,7 @@ function JobItem(props) {
         </div>
       </div>
       <div className="job-list__actions">
-        <button type="button">
+        <button type="button" onClick={() => removeJob(id)}>
           <img src={deleteJobIcon} alt="Remove Job" />
           Remove from list
         </button>
