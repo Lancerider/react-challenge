@@ -13,12 +13,21 @@ const JobsContainer = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const getJobs = async () => {
-    const fetchedJobs = await getAllJobs()
+
+    try {
+      const fetchedJobs = await getAllJobs()
+      setJobs(fetchedJobs)
+      setSelectedJobs(fetchedJobs)
+      setSelectedJobsTotal(fetchedJobs.length)
+      localStorage.setItem('jobs', fetchedJobs)
+    } catch (error) {
+      console.error(error)
+      const jobsInLocalStorage = localStorage['jobs']
+
+      setJobs(jobsInLocalStorage || [])
+    }
+
     setIsLoading(false)
-    setJobs(fetchedJobs)
-    setSelectedJobs(fetchedJobs)
-    setSelectedJobsTotal(fetchedJobs.length)
-    setCategory(JOBS_CATEGORIES.default.id)
   }
 
   const removeJob = (id) => {
