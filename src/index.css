@@ -67,6 +67,10 @@ code {
   border-radius: 6px;
   margin: 0 5px 20px;
   min-width: 180px;
+  border: 1px solid white;
+}
+.jobs-list__item:hover {
+  border: 1px solid #cccc;
 }
 .jobs-list__icon {
   width: 36px;
@@ -89,50 +93,6 @@ code {
   align-items: flex-start;
   height: 5em;
   margin-bottom: 1.3em;
-}
-.job-list__actions {
-  text-align: center;
-  margin-bottom: .5em;
-}
-.job-list__actions button {
-  border: 1px solid #0093D3;
-  line-height: 2.8em;
-  padding: 0 1.2em;
-  color: #627884;
-  border-radius: 6px;
-  background: transparent;
-  cursor: pointer;
-  font-size: 0.75rem;
-}
-.job-list__actions button img {
-  width: 16px;
-  height: 16px;
-  margin-right: 5px;
-}
-.jobs-list__select {
-  border: 2px solid #3a4a5333;
-  color: #3a4a53;
-  line-height: 2.8em;
-  padding: .5rem .6rem;
-  border-radius: 6px;
-  background: white;
-  font-size: 0.75rem;
-  cursor: pointer;
-  width: 90px;
-}
-.jobs-list__select:hover {
-  border: 2px solid #3a4a5399;
-}
-.jobs-list__select option {
-  border: 2px solid #3a4a5333;
-  color: #3a4a53;
-  line-height: 2.8em;
-  padding: .5rem .6rem;
-  border-radius: 6px;
-  background: white;
-  font-size: 0.75rem;
-  cursor: pointer;
-  width: 90px;
 }
 
 .container {
