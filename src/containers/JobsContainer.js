@@ -15,7 +15,6 @@ const JobsContainer = () => {
   const getJobs = async () => {
     const fetchedJobs = await getAllJobs()
     setIsLoading(false)
-    console.log('Console log : getJobs -> fetchedJobs', fetchedJobs)
     setJobs(fetchedJobs)
     setSelectedJobs(fetchedJobs)
     setSelectedJobsTotal(fetchedJobs.length)
