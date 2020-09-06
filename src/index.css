@@ -109,3 +109,42 @@ code {
   height: 16px;
   margin-right: 5px;
 }
+.jobs-list__select {
+  border: 2px solid #3a4a5333;
+  color: #3a4a53;
+  line-height: 2.8em;
+  padding: .5rem .6rem;
+  border-radius: 6px;
+  background: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  width: 90px;
+}
+.jobs-list__select:hover {
+  border: 2px solid #3a4a5399;
+}
+.jobs-list__select option {
+  border: 2px solid #3a4a5333;
+  color: #3a4a53;
+  line-height: 2.8em;
+  padding: .5rem .6rem;
+  border-radius: 6px;
+  background: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  width: 90px;
+}
+
+.container {
+  width: 100%;
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jobs-list__no-item {
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: #fffa;
+}

@@ -1,0 +1,81 @@
+.loader-grid {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.loader-grid div {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #000;
+  animation: loader-grid 1.2s linear infinite;
+}
+
+.loader-grid div:nth-child(1) {
+  top: 12px;
+  left: 12px;
+  animation-delay: 0s;
+}
+
+.loader-grid div:nth-child(2) {
+  top: 12px;
+  left: 52px;
+  animation-delay: -0.4s;
+}
+
+.loader-grid div:nth-child(3) {
+  top: 12px;
+  left: 90px;
+  animation-delay: -0.8s;
+}
+
+.loader-grid div:nth-child(4) {
+  top: 52px;
+  left: 12px;
+  animation-delay: -0.4s;
+}
+
+.loader-grid div:nth-child(5) {
+  top: 52px;
+  left: 52px;
+  animation-delay: -0.8s;
+}
+
+.loader-grid div:nth-child(6) {
+  top: 52px;
+  left: 90px;
+  animation-delay: -1.2s;
+}
+
+.loader-grid div:nth-child(7) {
+  top: 90px;
+  left: 12px;
+  animation-delay: -0.8s;
+}
+
+.loader-grid div:nth-child(8) {
+  top: 90px;
+  left: 52px;
+  animation-delay: -1.2s;
+}
+
+.loader-grid div:nth-child(9) {
+  top: 90px;
+  left: 90px;
+  animation-delay: -1.6s;
+}
+
+@keyframes loader-grid {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
